@@ -1,0 +1,56 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+.video {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__play_button {
+    width: min(11.67vw, 11.2rem);
+  }
+
+  &__container--mask {
+    position: relative;
+
+    &:before {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(black, 0.3);
+    }
+  }
+
+  &__iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+  }
+
+  &__iframe_banner {
+    position: absolute;
+    top: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% + 20rem);
+    width: auto;
+    min-width: calc((100% + 20rem) * (16/9));
+    pointer-events: none;
+
+    @include mixin.respond(portrait) {
+        height: calc(100% + 20rem);
+        min-width: calc((100vh + 20rem) * (16/9));
+    }
+  }
+}

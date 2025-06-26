@@ -1,0 +1,69 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+// ==========================================
+// form
+// ==========================================
+
+
+input {
+  padding: 0 10px;
+  line-height: 2;
+  font-size: 1.5rem;
+  color: $base_font_color;
+  box-sizing: border-box;
+
+  &[type=text],
+  &[type=email],
+  &[type=password] {
+    padding: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color_1;
+    background-color: white;
+    // margin-bottom: 15px;
+
+
+    &:hover {
+      outline: none;
+    }
+
+    mixin.placeholder {
+      color: $base_font_color;
+    }
+  }
+
+  &[type=button],
+  &[type=submit],
+  &[type=search],
+  &[type=reset],
+  &[type=image] {
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $color_1;
+    }
+
+    &:active {
+      background-color: $color_2;
+    }
+  }
+
+  &[type="radio"],
+  &[type="checkbox"] {}
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $color_1;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  color: $base_font_color;
+  box-sizing: border-box;
+
+  mixin.placeholder {
+    color: $base_font_color;
+  };
+}

@@ -1,0 +1,51 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+.about_section {
+  width: 100%;
+  max-width: $default_width;
+  margin: 0 auto;
+  padding: 0 2rem 7rem;
+
+  .about_video {
+    width: 100%;
+    max-width: 96rem;
+    margin: 0 auto 3rem;
+  }
+
+  .about_content {
+    width: 100%;
+    max-width: 100.8rem;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    line-height: 2.8rem;
+
+    .more {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      padding: 2.4rem;
+      border-radius: 1px;
+      color: white;
+      background: #26C6D0;
+      font-weight: 700;
+      line-height: 1;
+      transition: all 0.3s;
+
+      &:after {
+        content: "";
+        width: 5.2rem;
+        height: 1px;
+        margin-left: 0.8rem;
+        background-color: white;
+      }
+
+      &:hover {
+        background-color: $color_3;
+      }
+    }
+  }
+}

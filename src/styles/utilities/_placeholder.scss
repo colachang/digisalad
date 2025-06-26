@@ -1,0 +1,30 @@
+// 佔位符
+
+// Placeholder @mixin
+// input {
+//   @include placeholder {
+//     /* styles for placeholder here */
+//   }
+// }
+ 
+@mixin placeholder {
+  &.placeholder {
+    @content
+  }
+ 
+  &::-webkit-input-placeholder {
+     @content
+  }
+ 
+  &:-moz-placeholder {
+     @content
+  }
+ 
+  &::-moz-placeholder {
+     @content
+  }
+ 
+  &:-ms-input-placeholder {
+     @content
+  }
+}

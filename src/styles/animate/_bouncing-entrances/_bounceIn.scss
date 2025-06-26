@@ -1,0 +1,37 @@
+@use '../defaults' as def;
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+	transform: scale(.9);
+  }
+  100% {
+	transform: scale(1);
+  }
+}
+
+@mixin bounceIn(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    bounceIn,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}

@@ -1,0 +1,23 @@
+@keyframes fadeInUpOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);}
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: .7;
+    transform: translateY(0px);
+  }
+}
+
+@mixin fadeInUpOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInUpOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

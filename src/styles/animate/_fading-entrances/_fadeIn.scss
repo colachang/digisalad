@@ -1,0 +1,25 @@
+@use '../defaults' as def;
+
+@keyframes fadeIn {
+	  0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@mixin fadeIn(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    fadeIn,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}

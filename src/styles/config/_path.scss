@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// 路徑
+// ==========================================
+$asset_path: "..";
+
+// 圖片
+// ==========================================
+$img_path:              "#{$asset_path}/img";
+$demoimg_path:          "#{$img_path}/demoimg";
+
+// 文字
+// ==========================================
+$font_path:             "#{$asset_path}/font";
+$icon_font_path:        "#{$asset_path}/font/iconfont";

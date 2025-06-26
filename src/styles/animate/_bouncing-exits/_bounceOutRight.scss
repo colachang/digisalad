@@ -1,0 +1,34 @@
+@use '../defaults' as def;
+
+@keyframes bounceOutRight {
+    0% {
+      transform: translateX(0);
+    }
+   20% {
+     opacity: 1;
+     transform: translateX(-20px);
+    }
+  100% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+}
+
+@mixin bounceOutRight(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    bounceOutRight,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}

@@ -1,0 +1,37 @@
+@use "sass:string";
+
+// web font
+// ==========================================
+$family_1: string.unquote("Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=#{$family_1});
+// ==========================================
+$sans: "proxima-nova", sans-serif;
+
+$base_font_family: $sans;
+
+
+// 粗細
+// ==========================================
+$thin:        100;
+$extra-light: 200;
+$light:       300;
+$normal:      400;
+$medium:      500;
+$semi_bold:   600;
+$bold:        700;
+$extra_bold:  800;
+$heavy:       900;
+
+// font-size & line height
+// ==========================================
+$base_line_height:      1.5;
+$base_font_size:        1.6rem;
+$base_font_weight:      $normal;
+$base_font_weight-bold: $bold;
+
+$h1_font_size:          2.4rem;
+$h2_font_size:          2.2rem;
+$h3_font_size:          2rem;
+$h4_font_size:          1.8rem;
+$h5_font_size:          1.6rem;
+$h6_font_size:          1.5rem;

@@ -1,0 +1,12 @@
+@use "sass:color";
+// 指定合適的文字顏色以對比背景顏色
+
+// .test {
+//     @include bg-color-contrast(#ccc);   
+// }
+
+
+@mixin bg-color-contrast($bg-color) {
+    background: $bg-color;
+    color: if( color.lightness($bg-color) < 50%, #eee, #222 );
+}

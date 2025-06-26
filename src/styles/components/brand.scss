@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+.brand_section {
+  width: 100%;
+  max-width: $default_width;
+  margin: 0 auto;
+  padding: 6.5rem 2rem 7rem;
+
+  .brand_content {
+    width: 100%;
+    max-width: 100.8rem;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    line-height: 2.8rem;
+
+    p {
+        margin-bottom: 3rem;
+    }
+  }
+}

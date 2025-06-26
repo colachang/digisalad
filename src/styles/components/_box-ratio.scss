@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+// ==========================================
+// 格子比例
+// ==========================================
+
+@mixin box-ratio($width: 100%, $ratio: 100%, $margin: 0, $child-box: "a") {
+
+  position: relative;
+  overflow: hidden;
+  width: $width;
+  box-sizing: border-box;
+
+  &:before {
+    content: " ";
+    display: block;
+    padding-top: $ratio;
+  }
+
+  >#{$child-box} {
+    position:  absolute;
+    display: block;
+    top: $margin;
+    left: $margin;
+    bottom: $margin;
+    right: $margin;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include background-size(cover);
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,17 @@
+$animate_count: 1 !default;
+$animate_duration: 1s !default;
+$animate_delay: 0s !default;
+$animate_function: ease !default;
+$animate_fill: both !default;
+$animate_visibility: visible !default;
+
+
+@mixin baseAnimation($name, $count, $duration, $delay, $function, $fill, $visibility) {
+    animation-name: $name;
+    animation-iteration-count: $count;
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-timing-function: $function;
+    animation-fill-mode: $fill;
+    visibility: $visibility;
+}

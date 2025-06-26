@@ -1,0 +1,31 @@
+@use '../defaults' as def;
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);}
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fadeInUp(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    fadeInUp,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}
+

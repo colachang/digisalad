@@ -1,0 +1,10 @@
+// 背景漸層
+
+// @include my-bg-gradient(top, white, black);
+ 
+ 
+@mixin my-bg-gradient($start-position, $start-color, $end-color) {
+  @include background-image(linear-gradient($start-position, $start-color, $end-color));
+  background-image: -ms-linear-gradient($start-position, $start-color, $end-color);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{$start-color}', endColorstr='#{$end-color}');
+}

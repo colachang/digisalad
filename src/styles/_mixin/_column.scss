@@ -1,0 +1,154 @@
+// ==========================================
+// 欄目
+// ==========================================
+
+
+@mixin column($column: 4, $margin: 3.2%, $ratio: true, $aspect: 100%) {
+
+    $space: $column - 1 ;
+    $full-space: $margin * $space * 2;
+    position: relative;
+
+    @if $column == 2 {
+
+        @media only screen and (min-width: 737px) {
+
+            width: calc((100% - #{$full-space}) / #{$column});
+            margin: $margin;
+
+            &:nth-child(#{$column}n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(#{$column}n+#{$column}) {
+                margin-right: 0;
+            }
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 736px) {
+            width: calc((100% - 10px) / 2 );
+            margin: 5px;
+
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @else if $column == 3 {
+
+        &:nth-child(#{$column}n+1) {
+            margin-left: 0;
+        }
+
+        &:nth-child(#{$column}n+#{$column}) {
+            margin-right: 0;
+        }
+
+        @media only screen and (min-width: 737px) {
+
+            width: calc((100% - #{$full-space}) / #{$column});
+            margin: $margin;
+            &:nth-child(2n+2) {
+                margin-right: $margin;
+            }
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 736px) {
+            width: calc((100% - 20px) / #{$column});
+            margin: 5px;
+            &:nth-child(2n+2) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @else if $column == 5 {
+
+        $full-space-1: $margin * 2 ;
+        $full-space-2: $margin * 4 ;
+
+        @media only screen and (min-width: 737px) {
+
+            margin: $margin;
+
+            &:nth-child(#{$column}n+1) {
+                width: calc((100% - #{$full-space-2})  / 3);
+                margin-left: 0;
+            }
+            &:nth-child(#{$column}n+2) {
+                width: calc((100% - #{$full-space-2})  / 3);
+            }
+            &:nth-child(#{$column}n+3) {
+                width: calc((100% - #{$full-space-2})  / 3);
+                margin-right: 0;
+            }
+
+            &:nth-child(#{$column}n+4) {
+                width: calc((100% - #{$full-space-1})  / 2);
+                margin-left: 0;
+            }
+            &:nth-child(#{$column}n+#{$column}) {
+                width: calc((100% - #{$full-space-1})  / 2);
+                margin-right: 0;
+            }
+
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 736px) {
+
+            width: calc((100% - 10px) / 2 );
+            margin: 5px;
+
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @else if $column % 2 == 0 and $column != 2 {
+
+        @media only screen and (min-width: 737px) {
+            width: calc((100% - #{$full-space})  / #{$column});
+            margin: $margin;
+
+            &:nth-child(#{$column}n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(#{$column}n+#{$column}) {
+                margin-right: 0;
+            }
+
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 736px) {
+            width: calc((100% - #{$full-space}) / #{$column} * 2);
+            margin: #{$margin};
+
+            &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @if $ratio {
+        &:after {
+            padding-top: $aspect;
+            display: block;
+            content: "";
+        }
+    }
+}

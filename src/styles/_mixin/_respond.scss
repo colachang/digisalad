@@ -1,0 +1,66 @@
+// ==========================================
+// 響應式網站設定
+// @include respond( 0, 799 ) {}    // <=800  (0~800)
+// @include respond( 800, 1199 ) {} // 800~1199
+// @include respond( 1200 ) {}      // >=1200
+// @include respond(0, 799, portrait) { ... }    // <= 799px 且直向
+// @include respond(800, 1199, landscape) { ... } // 800~1199px 且橫向
+// @include respond(1200) { ... }                 // >=1200px 不限方向
+// ==========================================
+
+@mixin respond($a: 0, $b: 99999, $orientation: null) {
+  // If only orientation is provided as first argument, treat it as orientation
+  @if ($b == 99999 and $orientation == null) and ($a == portrait or $a == landscape) {
+    $orientation: $a;
+    $a: 0;
+    // $b remains 99999
+  }
+  // <= b
+  @if $a == 0 and $orientation == null {
+    @media only screen and (max-width: #{$b}px) {
+      @content;
+    }
+  }
+  @else if $a == 0 and $orientation == portrait {
+    @media only screen and (max-width: #{$b}px) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @else if $a == 0 and $orientation == landscape {
+    @media only screen and (max-width: #{$b}px) and (orientation: landscape) {
+      @content;
+    }
+  }
+  // >= a
+  @else if $b == 99999 and $orientation == null {
+    @media only screen and (min-width: #{$a}px) {
+      @content;
+    }
+  }
+  @else if $b == 99999 and $orientation == portrait {
+    @media only screen and (min-width: #{$a}px) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @else if $b == 99999 and $orientation == landscape {
+    @media only screen and (min-width: #{$a}px) and (orientation: landscape) {
+      @content;
+    }
+  }
+  // between a and b
+  @else if $orientation == null {
+    @media only screen and (min-width: #{$a}px) and (max-width: #{$b}px) {
+      @content;
+    }
+  }
+  @else if $orientation == portrait {
+    @media only screen and (min-width: #{$a}px) and (max-width: #{$b}px) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @else if $orientation == landscape {
+    @media only screen and (min-width: #{$a}px) and (max-width: #{$b}px) and (orientation: landscape) {
+      @content;
+    }
+  }
+}

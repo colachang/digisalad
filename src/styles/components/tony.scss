@@ -1,0 +1,114 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+.tony_section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: calc((100vw - #{$default_width}) / 4);
+        height: 100%;
+        background: linear-gradient(0deg, rgba(88, 88, 128, 0.80) 0%, rgba(88, 88, 128, 0.80) 100%), url(../../assets/tony_bg_1.jpg) lightgray 50% / cover no-repeat;
+        z-index: -1;
+        border-radius: 0 3rem 3rem 3rem;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 50%;
+        background-color: $color_2;
+        z-index: -2;
+        border-radius: 0 0 0 3rem;
+    }
+
+    >div {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: $default_width;
+        margin: 0 auto;
+        padding: 6.5rem 2rem;
+
+        @include mixin.respond(0, 768) {
+            flex-direction: column;
+        }
+
+        .tony_content {
+            width: 40%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 0.1rem;
+            line-height: 2.8rem;
+
+            img {
+                width: 20.4rem;
+                height: 20.4rem;
+                border-radius: 10.2rem;
+                overflow: hidden;
+                margin-bottom: 4rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            p {
+                font-style: italic;
+            }
+
+            @include mixin.respond(0, 768) {
+                width: 100%;
+                text-align: center;
+                padding-bottom: 6.5rem;
+            }
+        }
+
+        .tony_quote {
+            width: 60%;
+            display: flex;
+            gap: 1rem;
+            padding-right: clamp(2rem, 7.5vw, 10.8rem);
+            padding-top: 10rem;
+            background-image: url(../../assets/quote.svg);
+            background-size: 9rem 9rem;
+            background-repeat: no-repeat;
+            background-position: top left calc(50% - clamp(1rem, 3.75vw, 5.4rem));
+            font-size: clamp(1.6rem, 1.53vw, 2.2rem);
+            font-weight: 400;
+            line-height: clamp(3.6rem, 3.33vw, 4.8rem);
+            letter-spacing: 0.2rem;
+
+            em {
+                font-weight: 700;
+                color: #FFBC58;
+            }
+
+            @include mixin.respond(0, 768) {
+                width: 100%;
+                text-align: center;
+                padding-right: 0;
+                background-position: top center;
+            }
+        }
+    }
+}

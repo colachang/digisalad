@@ -1,0 +1,41 @@
+@use "sass:color";
+// 按鈕樣式
+
+// .button-orange {
+//   @include button(#fa5400);
+// }
+
+@mixin button($bg-color) {
+  position: relative;
+  background-color: $bg-color;
+  color: if( color.lightness($bg-color) < 70%, #fff, #333 );
+  background-clip: padding-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 10px 15px;
+  border: 0;
+  text-align: center;
+  -webkit-touch-callout: none;
+  display: inline-block;
+  letter-spacing: 2px;
+  @include user-select('none');
+  box-sizing: 'border-box';
+  @include border-radius(3px);
+  transition: all .2s;
+
+  &:hover, &:focus {
+    top: -2px;
+    background: color.adjust($bg-color, $lightness: 10);
+    // color: if( lightness(lighten($bg-color, 10)) < 70%, #eee, #333 );
+    @include box-shadow(0px 2px 0px 0px color.adjust(color.adjust($bg-color, $lightness: -10), $saturation: -50));
+    outline: 0;
+  }
+
+  &:active {
+    top: 0;
+    background: color.adjust($bg-color, $lightness: -10);
+    // color: if( lightness($bg-color) < 50%, #eee, #333 );
+    @include box-shadow(0px 1px 4px 0px black(.35) inset);
+  }
+}

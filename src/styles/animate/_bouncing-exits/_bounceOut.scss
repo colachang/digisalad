@@ -1,0 +1,37 @@
+@use '../defaults' as def;
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+}
+
+@mixin bounceOut(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    bounceOut,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}

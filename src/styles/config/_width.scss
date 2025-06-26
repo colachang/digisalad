@@ -1,0 +1,30 @@
+// 解析度
+// ==========================================
+@use "sass:math";
+$default_width: 144rem;
+
+@function size($size, $maximum: 1.2) {
+    $min: math.div($size, 100);
+    $val: math.div($size, 375) * 100;
+    $max: $min * $maximum;
+    @return clamp(#{$min}rem, #{$val}vmin, #{$max}rem);
+};
+
+@function size_max($size, $maximum: 1.2) {
+    $min: math.div($size, 100);
+    $val: math.div($size, 375) * 100;
+    $max: $min * $maximum;
+    @return clamp(#{$min}vmin, #{$val}vmin, #{$max}rem);
+};
+
+@function size_vmin($size, $maximum: 1.2) {
+    $val: math.div($size, 375) * 100;
+    @return unquote("#{$val}vmin");
+};
+
+@mixin site-width {
+  width: 100%;
+  max-width: $default_width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

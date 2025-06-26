@@ -1,0 +1,34 @@
+ol.list, ul.list {
+  padding: 0;
+  padding: auto \9;
+  margin: auto;
+  margin: 0 \9;
+  padding-left: 25px;
+  padding-left: 0 \9;
+  margin-left: 0;
+  padding-left: 25px \9;
+  padding-bottom: 5px;
+  padding-bottom: 0 \9;
+  margin-bottom: 0;
+  padding-bottom: 5px \9;
+  padding-bottom: 15px;
+}
+
+ol.list {
+  list-style: decimal;
+}
+
+ul.list {
+  list-style: square;
+}
+
+.list li {
+  padding: auto;
+  padding: 0 \9;
+  margin: 0;
+  margin: auto \9;
+  padding-top: 0;
+  padding-bottom: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}

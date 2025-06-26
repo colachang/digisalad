@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// ==========================================
+// 格子
+// ==========================================
+
+@mixin flex-row($margin: 5px, $child-box: "div") {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  >#{$child-box} {
+    margin: $margin;
+  }
+}
+
+@mixin flex-grid($grid: 20%, $margin: 5px, $child-box: "li") {
+  width: 100%;
+  display: flex;
+  @include flex-wrap(wrap);
+  justify-content: space-between;
+  align-items: stretch;
+
+  // &:after {
+  //   content: " ";
+  //   flex: auto;
+  // }
+
+  >#{$child-box} {
+    width: $grid;
+    margin: $margin;
+  }
+}
+
+.flex-row {
+  @include flex-row;
+}
+
+.flex-grid {
+  @include flex-grid;
+}
+
+.col {
+  flex: 1;
+}
+
+.double {
+  flex: 2;
+}
+
+.triple {
+  flex: 3;
+}

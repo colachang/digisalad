@@ -1,0 +1,34 @@
+@use '../defaults' as def;
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+}
+
+@mixin bounceOutDown(
+  $count: def.$animate_count,
+  $duration: def.$animate_duration,
+  $delay: def.$animate_delay,
+  $function: def.$animate_function,
+  $fill: def.$animate_fill,
+  $visibility: def.$animate_visibility
+) {
+  @include def.baseAnimation(
+    bounceOutDown,
+    $count,
+    $duration,
+    $delay,
+    $function,
+    $fill,
+    $visibility
+  );
+}

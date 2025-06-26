@@ -1,0 +1,15 @@
+// 響應式網站設定
+
+// @include respond( 0, 799 ) {}    // <=800  (0~800)
+// @include respond( 800, 1199 ) {} // 800~1199
+// @include respond( 1200 ) {}      // >=1200
+ 
+@mixin respond ( $a: 0, $b: 99999 ) {
+  @if $a == 0 {
+    @media only screen and (max-width: #{$b}px) { @content; }
+  } @else if $b == 99999 {
+    @media only screen and (min-width: #{$a}px) { @content; }
+  } @else {
+    @media only screen and (min-width: #{$a}px) and (max-width: #{$b}px) { @content; }
+  }
+}
