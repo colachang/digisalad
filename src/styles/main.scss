@@ -5,12 +5,12 @@
 .site {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: var(--vh);
 
     &__header {
         position: relative;
         width: 100vw;
-        height: calc(100vh + 3rem);
+        height: calc(var(--vh) + 3rem);
         margin-bottom: 8.5rem;
         padding-bottom: 3rem;
         display: flex;
@@ -46,6 +46,7 @@
             left: calc((100vw - #{$default_width}) / 4);
             font-size: clamp(1rem, 1.11vw, 1.6rem);
             font-weight: 700;
+            letter-spacing: 0.2rem;
             line-height: 1;
             text-align: center;
             white-space: nowrap;
@@ -66,7 +67,7 @@
                     position: relative;
                     content: "";
                     width: clamp(6rem, 7.64vw, 11rem);
-                    height: 0.01rem;
+                    height: 0.2rem;
                     margin-right: clamp(1rem, 1.67vw, 2.4rem);
                     background-color: #fff;
                 }
@@ -135,10 +136,6 @@
             opacity: 0;
             animation: show-dot 0.25s ease-out 2.1s forwards;
         }
-    }
-
-    &__main {
-        min-height: 200vh;
     }
 }
 

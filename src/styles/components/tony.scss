@@ -13,7 +13,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        right: calc((100vw - #{$default_width}) / 4);
+        right: calc((100vw - #{$default_width}) / 2);
         height: 100%;
         background: linear-gradient(0deg, rgba(88, 88, 128, 0.80) 0%, rgba(88, 88, 128, 0.80) 100%), url(../../assets/tony_bg_1.jpg) lightgray 50% / cover no-repeat;
         z-index: -1;

@@ -50,7 +50,7 @@
 
     @include mixin.respond(portrait) {
         height: calc(100% + 20rem);
-        min-width: calc((100vh + 20rem) * (16/9));
+        min-width: calc((var(--vh) + 20rem) * (16/9));
     }
   }
 }

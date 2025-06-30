@@ -2,10 +2,22 @@
 @use '../mixin' as mixin;
 
 .about_section {
+  position: relative;
   width: 100%;
   max-width: $default_width;
   margin: 0 auto;
   padding: 0 2rem 7rem;
+
+  &:before {
+      z-index: 10;
+      content: "";
+      position: absolute;
+      width: 0.2rem;
+      height: 8.5rem;
+      background-color: #808080;
+      top: -8.5rem;
+      left: calc(50% - 0.1rem);
+  }
 
   .about_video {
     width: 100%;
@@ -27,18 +39,19 @@
       justify-content: center;
       align-items: center;
       margin-top: 3rem;
-      padding: 2.4rem;
+      padding: 3.5rem 2.4rem;
       border-radius: 1px;
       color: white;
       background: #26C6D0;
       font-weight: 700;
+      letter-spacing: 0.2rem;
       line-height: 1;
       transition: all 0.3s;
 
       &:after {
         content: "";
         width: 5.2rem;
-        height: 1px;
+        height: 0.2rem;
         margin-left: 0.8rem;
         background-color: white;
       }

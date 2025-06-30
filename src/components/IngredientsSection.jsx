@@ -15,18 +15,24 @@ export default function IngredientsSection() {
     const listRef = useRef(null);
 
     useEffect(() => {
-        const el = listRef.current;
-        if (!el) return;
+        const list = listRef.current;
+        if (!list) return;
+        const items = list.querySelectorAll('li');
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    el.classList.add('animate');
-                    observer.disconnect();
-                }
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        obs.unobserve(entry.target);
+                    }
+                });
             },
-            { threshold: 0.2 }
+            {
+                rootMargin: '0px 0px 10% 0px',
+                threshold: 0.1,
+            }
         );
-        observer.observe(el);
+        items.forEach(item => observer.observe(item));
         return () => observer.disconnect();
     }, []);
 

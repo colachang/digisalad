@@ -1,7 +1,7 @@
 // 解析度
 // ==========================================
 @use "sass:math";
-$default_width: 144rem;
+$default_width: 128rem;
 
 @function size($size, $maximum: 1.2) {
     $min: math.div($size, 100);

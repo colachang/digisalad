@@ -19,8 +19,10 @@ export default function IntroSection({ onTasteClick }) {
                     className="button_taste"
                     onClick={onTasteClick}
                 >
-                    <img src={iconTaste} alt="TASTE US NOW!" className="icon_taste" />
-                    TASTE US NOW!
+                    <div>
+                        <img src={iconTaste} alt="TASTE US NOW!" className="icon_taste" />
+                        TASTE US NOW!
+                    </div>
                 </button>
             </div>
         </section>
