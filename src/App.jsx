@@ -4,6 +4,7 @@ import AwardsSection from './components/AwardsSection';
 import IngredientsSection from './components/IngredientsSection';
 import TonySection from './components/TonySection';
 import BrandSection from './components/BrandSection';
+import WorkSection from './components/WorkSection';
 import SiteMenu from './components/SiteMenu';
 import { useRef, useState, useEffect } from 'react';
 import IntroSection from './components/IntroSection';
@@ -62,6 +63,7 @@ function App() {
           <IngredientsSection />
           <TonySection />
           <BrandSection />
+          <WorkSection />
         </main>
       </div>
     </>

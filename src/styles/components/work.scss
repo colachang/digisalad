@@ -1,0 +1,235 @@
+@use '../config' as *;
+@use '../mixin' as mixin;
+
+.work_section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/bg_work.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 3rem 3rem;
+    margin-bottom: 5rem;
+    color: white;
+
+  >div {
+    position: relative;
+    width: 100%;
+    max-width: $default_width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 17rem 4rem 17rem;
+
+    @include mixin.respond(0, 1024) {
+        flex-direction: column;
+        padding: 6rem 2rem 6rem;
+    }
+
+    .arrow {
+        z-index: 10;
+      background: none;
+      border: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 2.5rem;
+      background-color: #26C6D0;
+
+      &--left {
+        left: 2rem;
+      }
+      &--right {
+        right: 2rem;
+      }
+
+      img {
+        width: 5rem;
+        object-fit: contain;
+      }
+
+        @include mixin.respond(0, 1024) {
+            top: 30%;
+            transform: translateY(-50%);
+
+            &--left {
+                left: 0;
+            }
+            &--right {
+                right: 0;
+            }
+        }
+    }
+  }
+
+  .work_slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+    @include mixin.respond(0, 1024) {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .slide {
+      width: 100%;
+        border-radius: 3rem;
+        overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .btn.view_project {
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        padding: 6rem 2.4rem;
+        border-radius: 1px;
+        color: white;
+        background: #26C6D0;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        line-height: 1;
+        transition: all 0.3s;
+        right: -6.8rem;
+        bottom: -7.5rem;
+
+        &:after {
+            content: "";
+            width: 5.2rem;
+            height: 0.2rem;
+            margin-left: 0.8rem;
+            background-color: white;
+        }
+
+        @include mixin.respond(0, 1024) {
+            padding: 3rem 2.4rem;
+            right: -4rem;
+            bottom: -4.5rem;
+        }
+    }
+  }
+
+  .work_content {
+    position: relative;
+    width: 50%;
+    padding: 10rem 2rem 2rem 6rem;
+
+
+
+      @include mixin.respond(0, 1024) {
+            width: 100%;
+            padding: 10rem 0 10rem 0;
+        }
+
+
+    .work_index {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: -6.7rem;
+        top: -1.7rem;
+        width: 3.4rem;
+        height: 3.4rem;
+
+        @include mixin.respond(0, 1024) {
+            left: 0;
+            top: 1rem;
+        }
+
+        >span {
+            position: relative;
+        }
+
+      .current,
+      .total {
+        position: absolute;
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      .current {
+        left: 0;
+        top: 0;
+      }
+
+      .total {
+        right: 0;
+        bottom: 0;
+      }
+
+      .separator {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 3.4rem;
+        margin-left: -1.7rem;
+        height: 0.1rem;
+        background-color: #26C6D0;
+        transform: rotate(-45deg);
+        transform-origin: center;
+      }
+    }
+
+    .work_text {
+      margin-top: 1rem;
+
+      .subtitle {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .title {
+        position: relative;
+        display: inline-block;
+        font-size: 3.2rem;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 4rem;
+
+        > span {
+            position: relative;
+        }
+
+        .dot {
+            position: relative;
+            left: 0.8rem;
+            font-size: 5rem;
+            color: $color_3;
+            transition: all 0.3s;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: calc(100% - 1rem);
+            left: 0;
+            bottom: 0.8rem;
+            height: 0.4rem;
+            background-color: #26C6D0;
+        }
+      }
+
+      .description {
+        line-height: 1.6;
+      }
+    }
+  }
+}
